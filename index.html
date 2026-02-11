@@ -1,95 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ABC College AI Assistant</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC College AI Assistant</title>
 
-  <style>
-    body {
-      margin: 0;
-      background-color: #343541;
-      font-family: "Segoe UI", Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<style>
+body {
+    margin: 0;
+    background-color: #0f172a;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    .container {
-      width: 420px;
-      height: 650px;
-      background-color: #444654;
-      border-radius: 12px;
-      box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
+/* Chat Container */
+.chat-container {
+    width: 420px;
+    height: 720px;
+    background: #111827;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
 
-    .header {
-      background-color: #202123;
-      color: white;
-      padding: 18px;
-      font-size: 18px;
-      text-align: center;
-      font-weight: 500;
-      border-bottom: 1px solid #555;
-    }
+/* Header */
+.chat-header {
+    background: #1f2937;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #374151;
+}
 
-    .subheader {
-      font-size: 13px;
-      color: #ccc;
-      margin-top: 4px;
-    }
+.chat-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 18px;
+}
 
-    .chat-area {
-      flex: 1;
-      background-color: #444654;
-    }
+.chat-header p {
+    margin: 5px 0 0;
+    color: #9ca3af;
+    font-size: 13px;
+}
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+/* Chat Area */
+.chat-body {
+    flex: 1;
+    background: #f3f4f6;
+}
 
-    .footer {
-      background-color: #202123;
-      color: #aaa;
-      text-align: center;
-      padding: 10px;
-      font-size: 12px;
-    }
-  </style>
+/* Footer */
+.chat-footer {
+    background: #1f2937;
+    text-align: center;
+    padding: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+</style>
+
 </head>
-
 <body>
 
-  <div class="container">
-    
-    <div class="header">
-      🎓 ABC College AI Assistant
-      <div class="subheader">
-        Powered by Dialogflow NLP
-      </div>
+<div class="chat-container">
+
+    <div class="chat-header">
+        <h2>🎓 ABC College AI Assistant</h2>
+        <p>Powered by Dialogflow NLP</p>
     </div>
 
-    <div class="chat-area">
-      <iframe
-  allow="microphone;"
-  width="100%"
-  height="100%"
-  style="border: none;"
-  src="https://console.dialogflow.com/api-client/demo/embedded/0be73a13-3960-4099-8bf8-e4192d52855f">
-</iframe>
-
+    <div class="chat-body">
+        <iframe 
+            height="100%" 
+            width="100%" 
+            style="border:none;"
+            src="https://bot.dialogflow.com/0be73a13-3960-4099-8bf8-e4192d52855f">
+        </iframe>
     </div>
 
-    <div class="footer">
-      24/7 Automated Admission Support
+    <div class="chat-footer">
+        24/7 Automated Admission Support
     </div>
 
-  </div>
+</div>
 
 </body>
 </html>
