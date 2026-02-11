@@ -2,67 +2,73 @@
 <html>
 <head>
   <title>ABC College AI Assistant</title>
+
+  <!-- Dialogflow Messenger Script -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background-color: #343541;
+      font-family: Arial, sans-serif;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
 
     .chat-container {
-      width: 500px;
-      height: 700px;
-      background-color: #202123;
+      width: 900px;
+      height: 90vh;
+      background: #202123;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
     }
 
-    .chat-header {
-      background-color: #202123;
-      padding: 15px;
+    .header {
+      padding: 20px;
       text-align: center;
-      color: white;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
-      border-bottom: 1px solid #444654;
+      background: #202123;
+      color: white;
+      border-bottom: 1px solid #444;
     }
 
-    iframe {
+    df-messenger {
       flex: 1;
-      border: none;
-    }
 
-    .chat-footer {
-      background-color: #202123;
-      padding: 10px;
-      text-align: center;
-      color: #8e8ea0;
-      font-size: 12px;
-      border-top: 1px solid #444654;
+      --df-messenger-bot-message: #444654;
+      --df-messenger-button-titlebar-color: #202123;
+      --df-messenger-chat-background-color: #343541;
+      --df-messenger-font-color: white;
+      --df-messenger-user-message: #10a37f;
+
+      --df-messenger-input-box-color: #40414f;
+      --df-messenger-input-font-color: white;
+
+      width: 100%;
     }
   </style>
 </head>
+
 <body>
 
   <div class="chat-container">
-    <div class="chat-header">
-      🎓 ABC College AI Assistant
+    <div class="header">
+      🎓 ABC College AI Assistant — Powered by Dialogflow
     </div>
 
-    <iframe 
-      src="https://bot.dialogflow.com/0be73a13-3960-4099-8bf8-e4192d52855f">
-    </iframe>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="CollegeEnquiryBot"
+      agent-id="0be73a13-3960-4099-8bf8-e4192d52855f"
+      language-code="en"
+    ></df-messenger>
 
-    <div class="chat-footer">
-      Powered by Dialogflow NLP | 24/7 Admission Support
-    </div>
   </div>
 
 </body>
