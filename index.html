@@ -1,97 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CampusCare AI</title>
 
-<!-- Dialogflow Messenger -->
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 
 <style>
-/* ===== GLOBAL STYLING ===== */
 body {
     margin: 0;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-/* ===== HEADER ===== */
 .header {
-    padding: 20px;
     text-align: center;
+    padding: 20px;
     font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-weight: bold;
 }
 
-/* ===== SUBTITLE ===== */
-.subtitle {
-    font-size: 14px;
-    opacity: 0.7;
-    margin-top: 5px;
-}
-
-/* ===== CHAT CONTAINER ===== */
 .chat-wrapper {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
-/* ===== DIALOGFLOW FULL PAGE OVERRIDE ===== */
 df-messenger {
-    --df-messenger-bot-message: #1e293b;
+    --df-messenger-bot-message: #e5e7eb;
     --df-messenger-user-message: #2563eb;
-    --df-messenger-chat-background-color: #0f172a;
-    --df-messenger-button-titlebar-color: #1d4ed8;
-    --df-messenger-font-color: #ffffff;
-    --df-messenger-input-box-color: #1e293b;
-    --df-messenger-input-font-color: white;
-    --df-messenger-send-icon: white;
+    --df-messenger-button-titlebar-color: #2563eb;
+    --df-messenger-chat-background-color: white;
+    --df-messenger-font-color: black;
 
-    width: 100%;
-    max-width: 850px;
+    width: 90%;
+    max-width: 800px;
     height: 85vh;
-
-    border-radius: 18px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}
-
-/* Remove floating bubble */
-df-messenger-chat {
-    position: unset !important;
-}
-
-/* Hide default launcher button */
-df-messenger::part(chat-bubble) {
-    display: none;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-    text-align: center;
-    font-size: 12px;
-    padding: 10px;
-    opacity: 0.6;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    df-messenger {
-        height: 90vh;
-        border-radius: 0;
-    }
 }
 </style>
 </head>
@@ -99,10 +47,7 @@ df-messenger::part(chat-bubble) {
 <body>
 
 <div class="header">
-    CampusCare AI – Student Support Chatbot
-    <div class="subtitle">
-        Powered by Google Dialogflow | Academic NLP Project
-    </div>
+CampusCare AI – Student Support Chatbot
 </div>
 
 <div class="chat-wrapper">
@@ -110,12 +55,9 @@ df-messenger::part(chat-bubble) {
         intent="WELCOME"
         chat-title="CampusCare AI"
         agent-id="91fd89fa-aea0-426d-8c7f-008ec209febb"
-        language-code="en">
+        language-code="en"
+        expand="true">
     </df-messenger>
-</div>
-
-<div class="footer">
-    Group 11 | MBA Core | AI Chatbot Development Assignment
 </div>
 
 </body>
