@@ -1,36 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>CampusCare AI</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 
     <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        text-align: center;
-      }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
 
-      h1 {
-        padding: 20px;
-      }
+        .header {
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .chat-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        df-messenger {
+            --df-messenger-bot-message: #f1f1f1;
+            --df-messenger-button-titlebar-color: #0a66c2;
+            --df-messenger-chat-background-color: #ffffff;
+            --df-messenger-font-color: black;
+            --df-messenger-user-message: #0a66c2;
+            
+            width: 100%;
+            max-width: 800px;
+            height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* IMPORTANT: Remove floating bubble */
+        df-messenger-chat {
+            position: unset !important;
+        }
+
     </style>
+</head>
 
-    <!-- Dialogflow Messenger -->
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-  </head>
+<body>
 
-  <body>
+    <div class="header">
+        CampusCare AI – Student Support Chatbot
+    </div>
 
-    <h1>CampusCare AI – Student Support Chatbot</h1>
+    <div class="chat-wrapper">
+        <df-messenger
+            intent="WELCOME"
+            chat-title="CampusCare AI"
+            agent-id="91fd89fa-aea0-426d-8c7f-008ec209febb"
+            language-code="en">
+        </df-messenger>
+    </div>
 
-    <df-messenger
-      intent="WELCOME"
-      chat-title="CampusCare AI"
-      agent-id="91fd89fa-aea0-426d-8c7f-008ec209febb"
-      language-code="en">
-    </df-messenger>
-
-  </body>
+</body>
 </html>
